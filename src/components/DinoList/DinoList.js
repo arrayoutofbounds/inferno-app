@@ -3,6 +3,7 @@ import { Component, linkEvent } from 'inferno';
 import ApiService from './../../utils/ApiService';
 import Loading from './../Loading/Loading';
 import './DinoList.css';
+import DinoDetail from '../DinoDetail/DinoDetail';
 
 /* 
   This function is pulled out of the class to 
@@ -74,8 +75,8 @@ class DinoList extends Component {
         </div>
         <div className="col-sm-9">
           {
-            !this.state.loading && !this.state.error && this.state.detail ? (
-              <p>{this.state.detail.name}</p>
+            !this.state.loading && !this.state.error ? (
+                <DinoDetail dino={this.state.detail} />
             ) : (
               <Loading error={this.state.error} />
             )
