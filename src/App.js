@@ -2,13 +2,15 @@ import { version, Component } from 'inferno';
 import './registerServiceWorker';
 import './App.css';
 import ApiService from './utils/ApiService';
+import Loading from './components/Loading/Loading';
 
 class App extends Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      dinos: []
+      dinos: [],
+      error: false,
     };
   }
   
@@ -33,7 +35,7 @@ class App extends Component {
 
 
   render(props, state) {
-    const { dinos } = this.state;
+    const { dinos, error } = this.state;
     return(
       <div className="App">
         <header className="App-header bg-primary clearfix">
@@ -42,7 +44,7 @@ class App extends Component {
         <div className="App-content container-fluid">
           <div className="row">
             {
-              dinos ? (
+              dinos.length > 0 ? (
                 <ul>
                   {
                     dinos.map((dino) => (
@@ -51,7 +53,7 @@ class App extends Component {
                   }
                 </ul>
               ) : (
-                <p>Loading...</p>
+                <Loading error={error} />
               )
             }
           </div>
