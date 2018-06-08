@@ -89,7 +89,7 @@ class App extends Component {
   }
 
 
-  render(props, state) {
+  render() {
     const { dinos, error, idToken, profile } = this.state;
     return(
       <div className="App">
