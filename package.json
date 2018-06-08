@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "auth0-js": "^9.6.1",
     "bootstrap": "3",
     "inferno": "^5.0.6",
     "inferno-scripts": "6.3.0"
