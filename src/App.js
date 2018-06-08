@@ -3,6 +3,7 @@ import './registerServiceWorker';
 import './App.css';
 import ApiService from './utils/ApiService';
 import Loading from './components/Loading/Loading';
+import DinoList from './components/DinoList/DinoList';
 
 class App extends Component {
 
@@ -45,13 +46,7 @@ class App extends Component {
           <div className="row">
             {
               dinos.length > 0 ? (
-                <ul>
-                  {
-                    dinos.map((dino) => (
-                      <li key={dino.id}>{dino.name}</li>
-                    ))
-                  }
-                </ul>
+                <DinoList dinos={dinos} />
               ) : (
                 <Loading error={error} />
               )

@@ -1,0 +1,7 @@
+.DinoList a {
+    cursor: pointer;
+  }
+  .DinoList a.active {
+    font-weight: bold;
+    text-decoration: underline;
+  }

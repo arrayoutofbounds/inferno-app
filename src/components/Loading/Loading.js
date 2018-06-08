@@ -5,8 +5,6 @@ import './Loading.css';
 class Loading extends Component {
   render() {
       const { error } = this.props;
-      console.log(error);
-      console.log(!error);
       return (
         <div className="Loading">
             {
